@@ -1,0 +1,780 @@
+===== CASCADING.py SESSION STARTED 2026-09-24 13:26:32 =====
+[13:26:34] ================================
+[13:26:34] WALK-AWAY AUTO START
+[13:26:34] ================================
+[13:26:34] EDRC_TOC    = C:/Users/Balamurali/Desktop/TOOL/AFAT/INPUT FILES/TOC.xlsx
+[13:26:34] EDRC_COORDS = C:/Users/Balamurali/Desktop/TOOL/AFAT/INPUT FILES/UNIVERSAL COORDINATES E2E.xlsx
+[13:26:34] LOADING TOC: C:/Users/Balamurali/Desktop/TOOL/AFAT/INPUT FILES/TOC.xlsx
+[13:26:34] TOC WORKBOOK OPENED : C:/Users/Balamurali/Desktop/TOOL/AFAT/INPUT FILES/TOC.xlsx
+[13:26:34] AVAILABLE SHEETS : ['SPL_CASE_CALLING_ON', 'TOC', 'INITIAL_CONTROL_BITS']
+[13:26:34] TOC SHEET FOUND : TOC
+[13:26:34] TOC HEADER ROW FOUND : 1
+[13:26:34] TOC COLUMN : SIGNAL = A
+[13:26:34] TOC COLUMN : ROUTE = B
+[13:26:34] TOC COLUMN : CASCADING_SIGNAL = P
+[13:26:34] TOC COLUMN : CASCADING_ROUTE = Q
+[13:26:34] TOC COLUMN : CASCADING = R
+[13:26:34] INFO : EXTRA SIGNAL COLUMN NOT FOUND
+[13:26:34] INFO : EXTRA ROUTE COLUMN NOT FOUND
+[13:26:34] TOC ROW 2 LOADED : 1 | 1_A | 3 | 3_K
+[13:26:34] TOC ROW 3 LOADED : 2 | 2_K | 8 | 8_L
+[13:26:34] TOC ROW 4 SKIPPED : CASCADING SIGNAL EMPTY
+[13:26:34] TOC ROW 5 SKIPPED : CASCADING SIGNAL EMPTY
+[13:26:34] TOC ROW 6 SKIPPED : CASCADING SIGNAL EMPTY
+[13:26:34] TOC ROW 7 SKIPPED : CASCADING SIGNAL EMPTY
+[13:26:34] TOC ROW 39 SKIPPED : SIGNAL EMPTY
+[13:26:34] TOC LOADED SUCCESSFULLY : 2 ROUTE ROW(S)
+[13:26:34] TOC LOADED SUCCESSFULLY: 2 ROUTE ROW(S)
+[13:26:34] LOADING CONFIG: C:/Users/Balamurali/Desktop/TOOL/AFAT/INPUT FILES/UNIVERSAL COORDINATES E2E.xlsx
+[13:26:34] ================================
+[13:26:34] LOAD CONFIG STARTED
+[13:26:34] TOC rows loaded = 2
+[13:26:34] EDRC_COORDS RAW = C:/Users/Balamurali/Desktop/TOOL/AFAT/INPUT FILES/UNIVERSAL COORDINATES E2E.xlsx
+[13:26:34] EDRC_COORDS FULL = C:/Users/Balamurali/Desktop/TOOL/AFAT/INPUT FILES/UNIVERSAL COORDINATES E2E.xlsx
+[13:26:34] CONFIG EXISTS = True
+[13:26:34] OPENING CONFIG = C:/Users/Balamurali/Desktop/TOOL/AFAT/INPUT FILES/UNIVERSAL COORDINATES E2E.xlsx
+[13:26:34] CONFIG OPENED SUCCESSFULLY
+[13:26:34] SHEETS = ['MAIN', 'SHUNT', 'CAL', 'POINT', 'CH', 'LC', 'TRACK_CONFIG', 'SYSTEM_CONTROLS']
+[13:26:34] UNIVERSAL COORDINATE FORMAT DETECTED (MAIN sheet, no MAIN_SIGNALS)
+[13:26:34] UNIVERSAL YARD COORDINATES LOADED : 8 MAIN, 6 CALLING-ON, 2 SHUNT, 2 POINT, 2 CH, 1 LC
+[13:26:34] CONFIG LOADED
+[13:26:34] SIGNAL CONFIG LOADED: 21 ELEMENT(S)
+[13:26:34] ================================
+[13:26:34] STARTING CASCADING AUTOMATION
+[13:26:34] ================================
+[13:26:34] LOAD TOC BLOCKED : AUTOMATION RUNNING
+[13:26:35] LOAD COORDINATES BLOCKED : AUTOMATION RUNNING
+[13:26:36] TEST PANEL FOUND
+[13:26:36] START AUTOMATION IGNORED : ALREADY RUNNING
+[13:26:37] TEST PANEL BROUGHT TO FRONT
+[13:26:37] TEST PANEL READY - AUTOMATION STARTING
+[13:26:38] STARTING CASCADING AUTOMATION
+[13:26:38] MAIN : 1  ROUTE : 1_A
+[13:26:38] CASCADING : 3  ROUTE : 3_K
+[13:26:38] TEST PANEL FOUND
+[13:26:39] TEST PANEL BROUGHT TO FRONT
+[13:26:40] Mouse moved to (303, 456)
+[13:26:41] Clicked coordinate (303, 456)
+[13:26:43] Clicked : 1_A
+[13:26:43] 1 1_A SET
+[13:26:48] Going to click cascading signal
+[13:26:49] TEST PANEL FOUND
+[13:26:50] TEST PANEL BROUGHT TO FRONT
+[13:26:50] Mouse moved to (1180, 600)
+[13:26:51] Clicked coordinate (1180, 600)
+[13:26:51] Cascading signal clicked
+[13:26:54] Clicked : 3_K
+[13:26:54] 3 3_K SET
+[13:26:59] Lamp Status: {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:26:59] >>> Before MAIN stable
+[13:26:59] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:26:59] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:26:59] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:00] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:00] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:00] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:00] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:00] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:00] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:01] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:01] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:01] 1 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:01] 1 YELLOW Samples : [True, True, True, True, True, True, True, True, True, True, True]
+[13:27:01] 1 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:01] 1 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:01] 1 RED    = STABLE_OFF
+[13:27:01] 1 YELLOW = STABLE_ON
+[13:27:01] 1 DY     = STABLE_OFF
+[13:27:01] 1 GREEN  = STABLE_OFF
+[13:27:01] 1 Blinking Lamps : []
+[13:27:01] 1 Stable Lamps : ['YELLOW']
+[13:27:01] >>> MAIN stable completed
+[13:27:01] >>> Before CASCADE stable
+[13:27:01] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:01] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:01] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:01] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:01] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:01] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:02] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:02] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:02] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:02] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:02] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:02] 3 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:02] 3 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:02] 3 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:02] 3 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:02] 3 RED    = STABLE_OFF
+[13:27:02] 3 YELLOW = STABLE_OFF
+[13:27:02] 3 DY     = STABLE_OFF
+[13:27:02] 3 GREEN  = STABLE_OFF
+[13:27:02] 3 Blinking Lamps : []
+[13:27:02] 3 Stable Lamps : []
+[13:27:02] >>> CASCADE stable completed
+[13:27:02] >>> Going to CONTROL BIT LOOP
+[13:27:02] 1 : YELLOW
+[13:27:02] 3 : BLANK
+[13:27:02] --------------------------------
+[13:27:02] CONTROL BIT : 3HECR
+[13:27:02] SETTING CONTROL BIT : 3HECR
+[13:27:04] CTRL+B Pressed
+[13:27:07] TEST PANEL FOUND
+[13:27:08] TEST PANEL BROUGHT TO FRONT
+[13:27:08] TEST PANEL FOUND
+[13:27:09] TEST PANEL BROUGHT TO FRONT
+[13:27:10] CLICKED : 50051 at (960,457) IN TEST PANEL
+[13:27:11] TEST PANEL FOUND
+[13:27:12] TEST PANEL BROUGHT TO FRONT
+[13:27:13] TEST PANEL FOUND
+[13:27:14] TEST PANEL BROUGHT TO FRONT
+[13:27:14] CLICKED : OK at (833,704) IN TEST PANEL
+[13:27:17] TEST PANEL FOUND
+[13:27:18] TEST PANEL BROUGHT TO FRONT
+[13:27:20] TEST PANEL FOUND
+[13:27:21] TEST PANEL BROUGHT TO FRONT
+[13:27:21] CLICKED : 3HECR at (2359,735) IN TEST PANEL
+[13:27:22] TEST PANEL FOUND
+[13:27:23] TEST PANEL BROUGHT TO FRONT
+[13:27:24] TEST PANEL FOUND
+[13:27:25] TEST PANEL BROUGHT TO FRONT
+[13:27:26] CLICKED : TRANSMIT at (3032,778) IN TEST PANEL
+[13:27:34] TEST PANEL FOUND
+[13:27:35] TEST PANEL BROUGHT TO FRONT
+[13:27:36] TEST PANEL FOUND
+[13:27:37] TEST PANEL BROUGHT TO FRONT
+[13:27:37] CLICKED : Cancel at (2128,778) IN TEST PANEL
+[13:27:42] Waiting for signal to stabilise...
+[13:27:47] Reading stable cascade aspect...
+[13:27:47] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:47] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:47] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:48] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:48] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:48] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:48] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:48] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:48] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:48] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:49] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:49] 3 RED Samples    : [True, True, True, True, True, True, True, True, True, True, True]
+[13:27:49] 3 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:49] 3 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:49] 3 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:49] 3 RED    = STABLE_ON
+[13:27:49] 3 YELLOW = STABLE_OFF
+[13:27:49] 3 DY     = STABLE_OFF
+[13:27:49] 3 GREEN  = STABLE_OFF
+[13:27:49] 3 Blinking Lamps : []
+[13:27:49] 3 Stable Lamps : ['RED']
+[13:27:49] Reading stable main aspect...
+[13:27:49] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:49] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:49] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:49] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:49] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:50] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:50] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:50] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:50] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:50] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:50] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:27:50] 1 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:50] 1 YELLOW Samples : [True, True, True, True, True, True, True, True, True, True, True]
+[13:27:50] 1 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:50] 1 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:27:50] 1 RED    = STABLE_OFF
+[13:27:50] 1 YELLOW = STABLE_ON
+[13:27:50] 1 DY     = STABLE_OFF
+[13:27:50] 1 GREEN  = STABLE_OFF
+[13:27:50] 1 Blinking Lamps : []
+[13:27:50] 1 Stable Lamps : ['YELLOW']
+[13:27:50] CASCADE ACTUAL : RED
+[13:27:50] MAIN ACTUAL : YELLOW
+[13:27:50] 3HECR -> PASS
+[13:27:50] --------------------------------
+[13:27:50] CONTROL BIT : 3RECR
+[13:27:50] SETTING CONTROL BIT : 3RECR
+[13:27:52] CTRL+B Pressed
+[13:27:55] TEST PANEL FOUND
+[13:27:56] TEST PANEL BROUGHT TO FRONT
+[13:27:56] TEST PANEL FOUND
+[13:27:57] TEST PANEL BROUGHT TO FRONT
+[13:27:58] CLICKED : 50051 at (960,457) IN TEST PANEL
+[13:27:59] TEST PANEL FOUND
+[13:28:00] TEST PANEL BROUGHT TO FRONT
+[13:28:01] TEST PANEL FOUND
+[13:28:02] TEST PANEL BROUGHT TO FRONT
+[13:28:02] CLICKED : OK at (833,704) IN TEST PANEL
+[13:28:05] TEST PANEL FOUND
+[13:28:06] TEST PANEL BROUGHT TO FRONT
+[13:28:07] TEST PANEL FOUND
+[13:28:09] TEST PANEL BROUGHT TO FRONT
+[13:28:09] CLICKED : 3RECR at (2444,543) IN TEST PANEL
+[13:28:10] TEST PANEL FOUND
+[13:28:11] TEST PANEL BROUGHT TO FRONT
+[13:28:12] TEST PANEL FOUND
+[13:28:13] TEST PANEL BROUGHT TO FRONT
+[13:28:13] CLICKED : TRANSMIT at (3032,778) IN TEST PANEL
+[13:28:22] TEST PANEL FOUND
+[13:28:23] TEST PANEL BROUGHT TO FRONT
+[13:28:24] TEST PANEL FOUND
+[13:28:25] TEST PANEL BROUGHT TO FRONT
+[13:28:25] CLICKED : Cancel at (2128,778) IN TEST PANEL
+[13:28:30] Waiting for signal to stabilise...
+[13:28:35] Reading stable cascade aspect...
+[13:28:35] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:35] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:35] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:35] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:36] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:36] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:36] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:36] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:36] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:36] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:36] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:37] 3 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:28:37] 3 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:28:37] 3 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:28:37] 3 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:28:37] 3 RED    = STABLE_OFF
+[13:28:37] 3 YELLOW = STABLE_OFF
+[13:28:37] 3 DY     = STABLE_OFF
+[13:28:37] 3 GREEN  = STABLE_OFF
+[13:28:37] 3 Blinking Lamps : []
+[13:28:37] 3 Stable Lamps : []
+[13:28:37] Reading stable main aspect...
+[13:28:37] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:37] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:37] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:37] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:37] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:37] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:38] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:38] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:38] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:38] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:38] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:28:38] 1 RED Samples    : [True, True, True, True, True, True, True, True, True, True, True]
+[13:28:38] 1 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:28:38] 1 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:28:38] 1 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:28:38] 1 RED    = STABLE_ON
+[13:28:38] 1 YELLOW = STABLE_OFF
+[13:28:38] 1 DY     = STABLE_OFF
+[13:28:38] 1 GREEN  = STABLE_OFF
+[13:28:38] 1 Blinking Lamps : []
+[13:28:38] 1 Stable Lamps : ['RED']
+[13:28:38] CASCADE ACTUAL : BLANK
+[13:28:38] MAIN ACTUAL : RED
+[13:28:38] 3RECR -> PASS
+[13:28:38] 1 CASCADING TEST COMPLETED
+[13:28:38] RESTORING FIRST CONTROL BIT
+[13:28:38] RESTORE : 3HECR
+[13:28:38] SETTING CONTROL BIT : 3HECR
+[13:28:39] CTRL+B Pressed
+[13:28:43] TEST PANEL FOUND
+[13:28:44] TEST PANEL BROUGHT TO FRONT
+[13:28:44] TEST PANEL FOUND
+[13:28:45] TEST PANEL BROUGHT TO FRONT
+[13:28:46] CLICKED : 50051 at (960,457) IN TEST PANEL
+[13:28:47] TEST PANEL FOUND
+[13:28:48] TEST PANEL BROUGHT TO FRONT
+[13:28:49] TEST PANEL FOUND
+[13:28:50] TEST PANEL BROUGHT TO FRONT
+[13:28:50] CLICKED : OK at (833,704) IN TEST PANEL
+[13:28:53] TEST PANEL FOUND
+[13:28:54] TEST PANEL BROUGHT TO FRONT
+[13:28:55] TEST PANEL FOUND
+[13:28:56] TEST PANEL BROUGHT TO FRONT
+[13:28:57] CLICKED : 3HECR at (2359,735) IN TEST PANEL
+[13:28:58] TEST PANEL FOUND
+[13:28:59] TEST PANEL BROUGHT TO FRONT
+[13:29:00] TEST PANEL FOUND
+[13:29:01] TEST PANEL BROUGHT TO FRONT
+[13:29:01] CLICKED : TRANSMIT at (3032,778) IN TEST PANEL
+[13:29:09] TEST PANEL FOUND
+[13:29:10] TEST PANEL BROUGHT TO FRONT
+[13:29:11] TEST PANEL FOUND
+[13:29:12] TEST PANEL BROUGHT TO FRONT
+[13:29:13] CLICKED : Cancel at (2128,778) IN TEST PANEL
+[13:29:18] Waiting after restore...
+[13:29:23] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:23] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:23] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:23] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:23] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:24] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:24] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:24] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:24] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:24] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:24] 1 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:24] 1 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:29:24] 1 YELLOW Samples : [True, True, True, True, True, True, True, True, True, True, True]
+[13:29:24] 1 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:29:24] 1 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:29:24] 1 RED    = STABLE_OFF
+[13:29:24] 1 YELLOW = STABLE_ON
+[13:29:24] 1 DY     = STABLE_OFF
+[13:29:24] 1 GREEN  = STABLE_OFF
+[13:29:24] 1 Blinking Lamps : []
+[13:29:24] 1 Stable Lamps : ['YELLOW']
+[13:29:24] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:25] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:25] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:25] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:25] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:25] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:25] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:25] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:26] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:26] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:26] 3 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:29:26] 3 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:29:26] 3 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:29:26] 3 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:29:26] 3 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:29:26] 3 RED    = STABLE_OFF
+[13:29:26] 3 YELLOW = STABLE_OFF
+[13:29:26] 3 DY     = STABLE_OFF
+[13:29:26] 3 GREEN  = STABLE_OFF
+[13:29:26] 3 Blinking Lamps : []
+[13:29:26] 3 Stable Lamps : []
+[13:29:26] RESTORED MAIN : YELLOW
+[13:29:26] RESTORED CASCADE : BLANK
+[13:29:26] TEST PANEL FOUND
+[13:29:27] TEST PANEL BROUGHT TO FRONT
+[13:29:28] Mouse moved to (1180, 600)
+[13:29:29] Clicked coordinate (1180, 600)
+[13:29:31] Clicked : Signal Cancel
+[13:29:31] 3 SIGNAL CANCEL DONE
+[13:29:36] TEST PANEL FOUND
+[13:29:37] TEST PANEL BROUGHT TO FRONT
+[13:29:37] Mouse moved to (1180, 600)
+[13:29:38] Clicked coordinate (1180, 600)
+[13:29:40] Clicked : Route Release
+[13:29:40] 3 ROUTE RELEASE DONE
+[13:29:55] TEST PANEL FOUND
+[13:29:56] TEST PANEL BROUGHT TO FRONT
+[13:29:57] Mouse moved to (303, 456)
+[13:29:58] Clicked coordinate (303, 456)
+[13:30:00] Clicked : Signal Cancel
+[13:30:00] 1 SIGNAL CANCEL DONE
+[13:30:05] TEST PANEL FOUND
+[13:30:06] TEST PANEL BROUGHT TO FRONT
+[13:30:06] Mouse moved to (303, 456)
+[13:30:08] Clicked coordinate (303, 456)
+[13:30:09] Clicked : Route Release
+[13:30:09] 1 ROUTE RELEASE DONE
+[13:30:24] Checking signals before next route...
+[13:30:24] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:24] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:25] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:25] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:25] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:25] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:25] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:25] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:25] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:26] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:26] 1 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:26] 1 RED Samples    : [True, True, True, True, True, True, True, True, True, True, True]
+[13:30:26] 1 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:26] 1 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:26] 1 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:26] 1 RED    = STABLE_ON
+[13:30:26] 1 YELLOW = STABLE_OFF
+[13:30:26] 1 DY     = STABLE_OFF
+[13:30:26] 1 GREEN  = STABLE_OFF
+[13:30:26] 1 Blinking Lamps : []
+[13:30:26] 1 Stable Lamps : ['RED']
+[13:30:26] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:26] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:26] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:26] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:26] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:27] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:27] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:27] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:27] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:27] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:27] 3 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:30:27] 3 RED Samples    : [True, True, True, True, True, True, True, True, True, True, True]
+[13:30:27] 3 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:27] 3 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:27] 3 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:27] 3 RED    = STABLE_ON
+[13:30:27] 3 YELLOW = STABLE_OFF
+[13:30:27] 3 DY     = STABLE_OFF
+[13:30:27] 3 GREEN  = STABLE_OFF
+[13:30:27] 3 Blinking Lamps : []
+[13:30:27] 3 Stable Lamps : ['RED']
+[13:30:27] Before Next Route MAIN : RED
+[13:30:27] Before Next Route CASCADE : RED
+[13:30:32] MAIN : 2  ROUTE : 2_K
+[13:30:32] CASCADING : 8  ROUTE : 8_L
+[13:30:33] TEST PANEL FOUND
+[13:30:34] TEST PANEL BROUGHT TO FRONT
+[13:30:34] Mouse moved to (1182, 454)
+[13:30:35] Clicked coordinate (1182, 454)
+[13:30:38] Clicked : 2_K
+[13:30:38] 2 2_K SET
+[13:30:43] Going to click cascading signal
+[13:30:43] TEST PANEL FOUND
+[13:30:44] TEST PANEL BROUGHT TO FRONT
+[13:30:45] Mouse moved to (1502, 457)
+[13:30:46] Clicked coordinate (1502, 457)
+[13:30:46] Cascading signal clicked
+[13:30:49] Clicked : 8_L
+[13:30:49] 8 8_L SET
+[13:30:54] Lamp Status: {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:54] >>> Before MAIN stable
+[13:30:54] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:54] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:54] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:54] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:54] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:54] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:54] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:55] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:55] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:55] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:55] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:55] 2 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:55] 2 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:55] 2 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:55] 2 GREEN Samples  : [True, True, True, True, True, True, True, True, True, True, True]
+[13:30:55] 2 RED    = STABLE_OFF
+[13:30:55] 2 YELLOW = STABLE_OFF
+[13:30:55] 2 DY     = STABLE_OFF
+[13:30:55] 2 GREEN  = STABLE_ON
+[13:30:55] 2 Blinking Lamps : []
+[13:30:55] 2 Stable Lamps : ['GREEN']
+[13:30:55] >>> MAIN stable completed
+[13:30:55] >>> Before CASCADE stable
+[13:30:55] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:55] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:56] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:56] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:56] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:56] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:56] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:56] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:56] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:57] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:57] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:30:57] 8 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:57] 8 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:57] 8 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:30:57] 8 GREEN Samples  : [True, True, True, True, True, True, True, True, True, True, True]
+[13:30:57] 8 RED    = STABLE_OFF
+[13:30:57] 8 YELLOW = STABLE_OFF
+[13:30:57] 8 DY     = STABLE_OFF
+[13:30:57] 8 GREEN  = STABLE_ON
+[13:30:57] 8 Blinking Lamps : []
+[13:30:57] 8 Stable Lamps : ['GREEN']
+[13:30:57] >>> CASCADE stable completed
+[13:30:57] >>> Going to CONTROL BIT LOOP
+[13:30:57] 2 : GREEN
+[13:30:57] 8 : GREEN
+[13:30:57] --------------------------------
+[13:30:57] CONTROL BIT : 8DECR
+[13:30:57] SETTING CONTROL BIT : 8DECR
+[13:30:58] CTRL+B Pressed
+[13:31:01] TEST PANEL FOUND
+[13:31:02] TEST PANEL BROUGHT TO FRONT
+[13:31:03] TEST PANEL FOUND
+[13:31:04] TEST PANEL BROUGHT TO FRONT
+[13:31:04] CLICKED : 50051 at (960,457) IN TEST PANEL
+[13:31:05] TEST PANEL FOUND
+[13:31:06] TEST PANEL BROUGHT TO FRONT
+[13:31:07] TEST PANEL FOUND
+[13:31:08] TEST PANEL BROUGHT TO FRONT
+[13:31:09] CLICKED : OK at (833,704) IN TEST PANEL
+[13:31:12] TEST PANEL FOUND
+[13:31:13] TEST PANEL BROUGHT TO FRONT
+[13:31:14] TEST PANEL FOUND
+[13:31:15] TEST PANEL BROUGHT TO FRONT
+[13:31:15] CLICKED : 8DECR at (2444,575) IN TEST PANEL
+[13:31:16] TEST PANEL FOUND
+[13:31:17] TEST PANEL BROUGHT TO FRONT
+[13:31:19] TEST PANEL FOUND
+[13:31:20] TEST PANEL BROUGHT TO FRONT
+[13:31:20] CLICKED : TRANSMIT at (3032,778) IN TEST PANEL
+[13:31:28] TEST PANEL FOUND
+[13:31:29] TEST PANEL BROUGHT TO FRONT
+[13:31:30] TEST PANEL FOUND
+[13:31:31] TEST PANEL BROUGHT TO FRONT
+[13:31:32] CLICKED : Cancel at (2128,778) IN TEST PANEL
+[13:31:37] Waiting for signal to stabilise...
+[13:31:42] Reading stable cascade aspect...
+[13:31:42] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:42] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:42] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:31:42] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:31:42] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:31:42] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:31:42] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:31:43] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:43] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:43] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:43] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:43] 8 RED Samples    : [True, True, True, True, True, True, True, True, True, True, True]
+[13:31:43] 8 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:31:43] 8 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:31:43] 8 GREEN Samples  : [False, False, True, True, True, True, True, False, False, False, False]
+[13:31:43] 8 RED    = STABLE_ON
+[13:31:43] 8 YELLOW = STABLE_OFF
+[13:31:43] 8 DY     = STABLE_OFF
+[13:31:43] 8 GREEN  = CHANGING
+[13:31:43] 8 Blinking Lamps : ['GREEN']
+[13:31:43] 8 Stable Lamps : ['RED']
+[13:31:43] Reading stable main aspect...
+[13:31:43] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:43] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:44] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:44] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:44] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:44] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:44] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:44] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:44] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:45] 2 RAW LAMPS : {'RED': False, 'YELLOW': True, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:31:45] 2 RED Samples    : [False, False, False, False, False, False, False, False, False, False]
+[13:31:45] 2 YELLOW Samples : [True, True, True, True, True, True, True, True, True, True]
+[13:31:45] 2 DY Samples     : [False, False, False, False, False, False, False, False, False, False]
+[13:31:45] 2 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False]
+[13:31:45] 2 RED    = STABLE_OFF
+[13:31:45] 2 YELLOW = STABLE_ON
+[13:31:45] 2 DY     = STABLE_OFF
+[13:31:45] 2 GREEN  = STABLE_OFF
+[13:31:45] 2 Blinking Lamps : []
+[13:31:45] 2 Stable Lamps : ['YELLOW']
+[13:31:45] CASCADE ACTUAL : RED
+[13:31:45] MAIN ACTUAL : YELLOW
+[13:31:45] 8DECR -> PASS
+[13:31:45] --------------------------------
+[13:31:45] CONTROL BIT : 8RECR
+[13:31:45] SETTING CONTROL BIT : 8RECR
+[13:31:46] CTRL+B Pressed
+[13:31:49] TEST PANEL FOUND
+[13:31:50] TEST PANEL BROUGHT TO FRONT
+[13:31:51] TEST PANEL FOUND
+[13:31:52] TEST PANEL BROUGHT TO FRONT
+[13:31:52] CLICKED : 50051 at (960,457) IN TEST PANEL
+[13:31:53] TEST PANEL FOUND
+[13:31:54] TEST PANEL BROUGHT TO FRONT
+[13:31:55] TEST PANEL FOUND
+[13:31:56] TEST PANEL BROUGHT TO FRONT
+[13:31:56] CLICKED : OK at (833,704) IN TEST PANEL
+[13:32:00] TEST PANEL FOUND
+[13:32:01] TEST PANEL BROUGHT TO FRONT
+[13:32:02] TEST PANEL FOUND
+[13:32:03] TEST PANEL BROUGHT TO FRONT
+[13:32:03] CLICKED : 8RECR at (2444,591) IN TEST PANEL
+[13:32:04] TEST PANEL FOUND
+[13:32:05] TEST PANEL BROUGHT TO FRONT
+[13:32:06] TEST PANEL FOUND
+[13:32:07] TEST PANEL BROUGHT TO FRONT
+[13:32:08] CLICKED : TRANSMIT at (3032,778) IN TEST PANEL
+[13:32:16] TEST PANEL FOUND
+[13:32:17] TEST PANEL BROUGHT TO FRONT
+[13:32:18] TEST PANEL FOUND
+[13:32:19] TEST PANEL BROUGHT TO FRONT
+[13:32:19] CLICKED : Cancel at (2128,778) IN TEST PANEL
+[13:32:24] Waiting for signal to stabilise...
+[13:32:29] Reading stable cascade aspect...
+[13:32:29] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:32:30] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:32:30] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:32:30] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:32:30] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:32:30] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:30] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:30] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:31] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:31] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:32:31] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:32:31] 8 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:32:31] 8 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:32:31] 8 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:32:31] 8 GREEN Samples  : [True, True, True, True, True, False, False, False, False, True, True]
+[13:32:31] 8 RED    = STABLE_OFF
+[13:32:31] 8 YELLOW = STABLE_OFF
+[13:32:31] 8 DY     = STABLE_OFF
+[13:32:31] 8 GREEN  = CHANGING
+[13:32:31] 8 Blinking Lamps : ['GREEN']
+[13:32:31] 8 Stable Lamps : []
+[13:32:31] Reading stable main aspect...
+[13:32:31] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:31] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:31] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:32] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:32] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:32] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:32] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:32] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:32] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:32] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:33] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:32:33] 2 RED Samples    : [True, True, True, True, True, True, True, True, True, True, True]
+[13:32:33] 2 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:32:33] 2 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:32:33] 2 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:32:33] 2 RED    = STABLE_ON
+[13:32:33] 2 YELLOW = STABLE_OFF
+[13:32:33] 2 DY     = STABLE_OFF
+[13:32:33] 2 GREEN  = STABLE_OFF
+[13:32:33] 2 Blinking Lamps : []
+[13:32:33] 2 Stable Lamps : ['RED']
+[13:32:33] CASCADE ACTUAL : BLANK
+[13:32:33] MAIN ACTUAL : RED
+[13:32:33] 8RECR -> PASS
+[13:32:33] 2 CASCADING TEST COMPLETED
+[13:32:33] RESTORING FIRST CONTROL BIT
+[13:32:33] RESTORE : 8DECR
+[13:32:33] SETTING CONTROL BIT : 8DECR
+[13:32:34] CTRL+B Pressed
+[13:32:37] TEST PANEL FOUND
+[13:32:38] TEST PANEL BROUGHT TO FRONT
+[13:32:39] TEST PANEL FOUND
+[13:32:40] TEST PANEL BROUGHT TO FRONT
+[13:32:40] CLICKED : 50051 at (960,457) IN TEST PANEL
+[13:32:41] TEST PANEL FOUND
+[13:32:42] TEST PANEL BROUGHT TO FRONT
+[13:32:43] TEST PANEL FOUND
+[13:32:44] TEST PANEL BROUGHT TO FRONT
+[13:32:44] CLICKED : OK at (833,704) IN TEST PANEL
+[13:32:47] TEST PANEL FOUND
+[13:32:48] TEST PANEL BROUGHT TO FRONT
+[13:32:50] TEST PANEL FOUND
+[13:32:51] TEST PANEL BROUGHT TO FRONT
+[13:32:51] CLICKED : 8DECR at (2444,575) IN TEST PANEL
+[13:32:52] TEST PANEL FOUND
+[13:32:53] TEST PANEL BROUGHT TO FRONT
+[13:32:54] TEST PANEL FOUND
+[13:32:55] TEST PANEL BROUGHT TO FRONT
+[13:32:56] CLICKED : TRANSMIT at (3032,778) IN TEST PANEL
+[13:33:04] TEST PANEL FOUND
+[13:33:05] TEST PANEL BROUGHT TO FRONT
+[13:33:06] TEST PANEL FOUND
+[13:33:07] TEST PANEL BROUGHT TO FRONT
+[13:33:07] CLICKED : Cancel at (2128,778) IN TEST PANEL
+[13:33:12] Waiting after restore...
+[13:33:17] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:18] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:18] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:18] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:18] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:18] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:18] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:18] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:19] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:19] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:19] 2 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:19] 2 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:33:19] 2 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:33:19] 2 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:33:19] 2 GREEN Samples  : [True, True, True, True, True, True, True, True, True, True, True]
+[13:33:19] 2 RED    = STABLE_OFF
+[13:33:19] 2 YELLOW = STABLE_OFF
+[13:33:19] 2 DY     = STABLE_OFF
+[13:33:19] 2 GREEN  = STABLE_ON
+[13:33:19] 2 Blinking Lamps : []
+[13:33:19] 2 Stable Lamps : ['GREEN']
+[13:33:19] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:19] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:19] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:19] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:20] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:20] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:20] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:20] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:20] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:20] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:20] 8 RAW LAMPS : {'RED': False, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': True}
+[13:33:21] 8 RED Samples    : [False, False, False, False, False, False, False, False, False, False, False]
+[13:33:21] 8 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:33:21] 8 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:33:21] 8 GREEN Samples  : [True, True, True, True, True, True, True, True, True, True, True]
+[13:33:21] 8 RED    = STABLE_OFF
+[13:33:21] 8 YELLOW = STABLE_OFF
+[13:33:21] 8 DY     = STABLE_OFF
+[13:33:21] 8 GREEN  = STABLE_ON
+[13:33:21] 8 Blinking Lamps : []
+[13:33:21] 8 Stable Lamps : ['GREEN']
+[13:33:21] RESTORED MAIN : GREEN
+[13:33:21] RESTORED CASCADE : GREEN
+[13:33:21] TEST PANEL FOUND
+[13:33:22] TEST PANEL BROUGHT TO FRONT
+[13:33:22] Mouse moved to (1502, 457)
+[13:33:23] Clicked coordinate (1502, 457)
+[13:33:25] Clicked : Signal Cancel
+[13:33:25] 8 SIGNAL CANCEL DONE
+[13:33:30] TEST PANEL FOUND
+[13:33:31] TEST PANEL BROUGHT TO FRONT
+[13:33:32] Mouse moved to (1502, 457)
+[13:33:33] Clicked coordinate (1502, 457)
+[13:33:35] Clicked : Route Release
+[13:33:35] 8 ROUTE RELEASE DONE
+[13:33:50] TEST PANEL FOUND
+[13:33:51] TEST PANEL BROUGHT TO FRONT
+[13:33:51] Mouse moved to (1182, 454)
+[13:33:53] Clicked coordinate (1182, 454)
+[13:33:54] Clicked : Signal Cancel
+[13:33:54] 2 SIGNAL CANCEL DONE
+[13:33:59] TEST PANEL FOUND
+[13:34:00] TEST PANEL BROUGHT TO FRONT
+[13:34:01] Mouse moved to (1182, 454)
+[13:34:02] Clicked coordinate (1182, 454)
+[13:34:04] Clicked : Route Release
+[13:34:04] 2 ROUTE RELEASE DONE
+[13:34:19] Checking signals before next route...
+[13:34:19] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:19] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:19] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:19] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:19] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:20] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:20] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:20] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:20] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:20] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:20] 2 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:20] 2 RED Samples    : [True, True, True, True, True, True, True, True, True, True, True]
+[13:34:20] 2 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:34:20] 2 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:34:20] 2 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:34:20] 2 RED    = STABLE_ON
+[13:34:20] 2 YELLOW = STABLE_OFF
+[13:34:20] 2 DY     = STABLE_OFF
+[13:34:20] 2 GREEN  = STABLE_OFF
+[13:34:20] 2 Blinking Lamps : []
+[13:34:20] 2 Stable Lamps : ['RED']
+[13:34:20] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:21] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:21] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:21] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:21] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:21] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:21] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:21] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:22] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:22] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:22] 8 RAW LAMPS : {'RED': True, 'YELLOW': False, 'DOUBLE_YELLOW': False, 'GREEN': False}
+[13:34:22] 8 RED Samples    : [True, True, True, True, True, True, True, True, True, True, True]
+[13:34:22] 8 YELLOW Samples : [False, False, False, False, False, False, False, False, False, False, False]
+[13:34:22] 8 DY Samples     : [False, False, False, False, False, False, False, False, False, False, False]
+[13:34:22] 8 GREEN Samples  : [False, False, False, False, False, False, False, False, False, False, False]
+[13:34:22] 8 RED    = STABLE_ON
+[13:34:22] 8 YELLOW = STABLE_OFF
+[13:34:22] 8 DY     = STABLE_OFF
+[13:34:22] 8 GREEN  = STABLE_OFF
+[13:34:22] 8 Blinking Lamps : []
+[13:34:22] 8 Stable Lamps : ['RED']
+[13:34:22] Before Next Route MAIN : RED
+[13:34:22] Before Next Route CASCADE : RED
+[13:34:27] REPORT SAVED : CASCADING_AUTOMATION_REPORT.xlsx
+[13:34:27] AUTOMATION COMPLETED

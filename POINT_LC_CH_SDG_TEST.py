@@ -81,7 +81,14 @@ from datetime import datetime
 # EDRC_PROGRAM_DIR environment variable.  Keep Reports only as a manual-run
 # fallback; never create/use it when launched by EDRC.
 EDRC_PROGRAM_DIR = os.environ.get("EDRC_PROGRAM_DIR", "").strip()
-REPORT_FOLDER = EDRC_PROGRAM_DIR if EDRC_PROGRAM_DIR else "Reports"
+# Report goes to the EDRC session folder when the launcher supplies
+# one, otherwise to the working folder - never into a "Reports"
+# sub-folder, where the launcher does not look.
+REPORT_FOLDER = (
+    EDRC_PROGRAM_DIR
+    or os.environ.get("EDRC_REPORT_DIR", "").strip()
+    or os.getcwd()
+)
 REPORT_FILE = None
 PASS_COUNT = 0
 FAIL_COUNT = 0
@@ -2075,19 +2082,46 @@ def open_bit_chart():
 # ==========================================================
 
 def close_bit_chart():
+    """toggle_track() already clicks Cancel, so the chart is normally
+    closed by the time this runs. Only close it if a Cancel button is
+    still on screen - otherwise return at once instead of searching
+    every window for ~50 seconds."""
 
     log("--------------------------------")
     log("Closing Bit Chart")
 
+    if not is_bit_chart_open():
+        log("Bit Chart already closed")
+        return True
+
     if not find_and_click("Cancel"):
-        log("Failed to close Bit Chart")
-        return False
+        log("Bit Chart : Cancel not found - treating as closed")
+        return True
 
     wait(1)
 
     log("Bit Chart Closed")
 
     return True
+
+
+def is_bit_chart_open():
+    """True if a Station bit chart window is still open on ANY screen."""
+    try:
+        for window in Desktop(backend="uia").windows():
+            try:
+                title = window.window_text().strip().upper()
+            except Exception:
+                continue
+
+            if title.startswith("STATION") and "INDICATION" in title:
+                log(f"BIT CHART WINDOW OPEN : {window.window_text()}")
+                return True
+
+    except Exception as e:
+        log(f"BIT CHART CHECK ERROR : {e}")
+
+    return False
 # ==========================================================
 # TOGGLE TRACK
 # ==========================================================
@@ -2228,7 +2262,29 @@ def track_up(track):
 # LOG
 # =========================================================
 
+LOG_FILE = os.path.join(
+    REPORT_FOLDER if REPORT_FOLDER else os.getcwd(),
+    f"POINT_LC_CH_SDG_LOG_{time.strftime('%Y%m%d_%H%M%S')}.txt"
+)
+
+
 def log(msg):
+
+    line = f"[{time.strftime('%H:%M:%S')}] {msg}"
+
+    # File + console first, so the complete log exists even when the
+    # window is hidden or closed by the launcher.
+    try:
+        os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
+        with open(LOG_FILE, "a", encoding="utf-8") as fh:
+            fh.write(line + "\n")
+    except Exception:
+        pass
+
+    try:
+        print(line, flush=True)
+    except Exception:
+        pass
 
     def write():
 
@@ -2946,6 +3002,33 @@ def get_lc_gate_coordinates(lc_name):
             )
 
             return coordinates
+
+    # The TOC name (e.g. "44") may differ from the name recorded in the
+    # LC sheet (e.g. "LC141"). If the sheet holds exactly ONE gate, use it.
+    single = []
+
+    for row in sheet.iter_rows(min_row=2, values_only=True):
+        if row[0] is not None:
+            single.append(row)
+
+    if len(single) == 1:
+
+        row = single[0]
+
+        coordinates = {
+            "control": (int(row[1]), int(row[2])),
+            "close": (int(row[3]), int(row[4])),
+            "open": (int(row[5]), int(row[6]))
+        }
+
+        wb.close()
+
+        log(
+            f"LC Gate {lc_name} not listed - using the only gate in the "
+            f"LC sheet : {row[0]} : {coordinates}"
+        )
+
+        return coordinates
 
     wb.close()
 
@@ -5523,24 +5606,114 @@ def record_track_coordinate():
         )
 
 
+def _track_name_variants(track_name):
+    """1CXTPR -> 1CXTPR / 1CXT ; 1CXT -> 1CXT / 1CXTPR."""
+    name = str(track_name).strip().upper()
+
+    variants = [name]
+
+    if name.endswith("PR"):
+        variants.append(name[:-2])
+    else:
+        variants.append(name + "PR")
+
+    return variants
+
+
+def _search_track_sheet(ws, track_name):
+
+    wanted = _track_name_variants(track_name)
+
+    for row in ws.iter_rows(min_row=1, values_only=True):
+
+        if not row or row[0] is None:
+            continue
+
+        if str(row[0]).strip().upper() not in wanted:
+            continue
+
+        try:
+            return int(float(row[1])), int(float(row[2]))
+        except (TypeError, ValueError, IndexError):
+            continue
+
+    return None, None
+
+
 def get_track_coordinate(track_name):
+    """Track coordinates come from:
+       1. TRACK_CONFIG in the coordinate file (if recorded there), or
+       2. the TRACK COORDS file the EDRC launcher supplies
+          (TRACK_COORDINATES_CAPTURED.xlsx).
+       The name is matched with and without the PR suffix
+       (1CXTPR <-> 1CXT)."""
 
-    wb = load_workbook(CONFIG_FILE, data_only=True)
+    # 1. TRACK_CONFIG inside the coordinate file
+    try:
+        if CONFIG_FILE and os.path.exists(CONFIG_FILE):
 
-    ws = wb["TRACK_CONFIG"]
+            wb = load_workbook(CONFIG_FILE, data_only=True)
 
-    for row in ws.iter_rows(min_row=2, values_only=True):
+            if "TRACK_CONFIG" in wb.sheetnames:
 
-        if str(row[0]).strip().upper() == track_name.strip().upper():
+                x, y = _search_track_sheet(
+                    wb["TRACK_CONFIG"],
+                    track_name
+                )
 
-            x = int(float(row[1]))
-            y = int(float(row[2]))
+                wb.close()
+
+                if x is not None:
+                    log(f"TRACK COORDINATE (TRACK_CONFIG) : {track_name} -> ({x},{y})")
+                    return x, y
+            else:
+                wb.close()
+
+    except Exception as e:
+        log(f"TRACK_CONFIG READ ERROR : {e}")
+
+    # 2. TRACK COORDS file from the launcher
+    candidates = [
+        os.environ.get("EDRC_TRACK_COORDS"),
+        os.environ.get("EDRC_TRACKS"),
+        os.environ.get("EDRC_TRACK_COORDINATES"),
+        os.path.join(os.getcwd(), "TRACK_COORDINATES_CAPTURED.xlsx")
+    ]
+
+    for item in candidates:
+
+        if not item:
+            continue
+
+        item = os.path.abspath(item)
+
+        if not os.path.exists(item):
+            continue
+
+        try:
+            wb = load_workbook(item, data_only=True)
+
+            for sheet in wb.worksheets:
+
+                x, y = _search_track_sheet(sheet, track_name)
+
+                if x is not None:
+                    wb.close()
+                    log(
+                        f"TRACK COORDINATE ({os.path.basename(item)}) : "
+                        f"{track_name} -> ({x},{y})"
+                    )
+                    return x, y
 
             wb.close()
 
-            return x, y
+        except Exception as e:
+            log(f"TRACK COORDINATE FILE ERROR : {item} : {e}")
 
-    wb.close()
+    log(
+        f"TRACK COORDINATE NOT FOUND : {track_name} "
+        f"(checked TRACK_CONFIG and the TRACK COORDS file)"
+    )
 
     return None, None
 import time
@@ -6002,6 +6175,14 @@ def get_crank_handle_state(point):
 
     sheet = wb["CH"]
 
+    ch_headers = [
+        str(h).strip().upper() if h is not None else ""
+        for h in next(
+            sheet.iter_rows(min_row=1, max_row=1, values_only=True),
+            ()
+        )
+    ]
+
     in_lamp = None
     out_lamp = None
     free_lamp = None
@@ -6033,19 +6214,26 @@ def get_crank_handle_state(point):
             # I = FREE_Y
             # --------------------------------
 
-            in_lamp = (
-                int(row[3]),
-                int(row[4])
+            # Columns are located by HEADER NAME, so a CH sheet with
+            # an extra ECH pair (Menu / IN / OUT / ECH / FREE) is read
+            # correctly instead of taking ECH as FREE.
+            def _pair(*names):
+                for want in names:
+                    for idx, head in enumerate(ch_headers):
+                        if head == want:
+                            return (int(row[idx]), int(row[idx + 1]))
+                return None
+
+            in_lamp = _pair("IN_X", "IN X", "INX") or (
+                int(row[3]), int(row[4])
             )
 
-            out_lamp = (
-                int(row[5]),
-                int(row[6])
+            out_lamp = _pair("OUT_X", "OUT X", "OUTX") or (
+                int(row[5]), int(row[6])
             )
 
-            free_lamp = (
-                int(row[7]),
-                int(row[8])
+            free_lamp = _pair("FREE_X", "FREE X", "FREEX") or (
+                int(row[7]), int(row[8])
             )
 
         except (TypeError, ValueError, IndexError):
@@ -6446,18 +6634,77 @@ def minimize_for_edrc_walkaway():
 # TEST ROUTE ENGINE
 # =========================================================
 
+def route_has_test_data(signal, route):
+    """This program tests POINTS, LC GATE, CRANK HANDLE and the
+    calling-on TRACK. If a TOC row has none of those columns filled
+    (e.g. 8 / 8_L and 25 / 25_J), there is nothing to test for that
+    route, so it is skipped instead of being set and released."""
+
+    try:
+        wb = load_workbook(TOC_FILE, data_only=True)
+        ws = wb["TOC"]
+        headers = get_toc_header_map(ws)
+
+        for row in ws.iter_rows(min_row=2, values_only=True):
+
+            signal_value = toc_value(row, headers, "Signal")
+            route_value = toc_value(row, headers, "Route")
+
+            if signal_value is None or route_value is None:
+                continue
+
+            if str(signal_value).strip().upper() != str(signal).strip().upper():
+                continue
+
+            if str(route_value).strip().upper() != str(route).strip().upper():
+                continue
+
+            fields = {
+                "POINTS": toc_value(row, headers, "Points", "Point"),
+                "CRANK_HANDLE": toc_value(
+                    row, headers, "CRANK_HANDLE", "CRANK HANDLE", "CH"
+                ),
+                "44_LCP": toc_value(
+                    row, headers,
+                    "44_LCP", "44 LCP", "LC_GATE", "LC GATE", "LC"
+                ),
+                "TRACK": toc_value(row, headers, "Track")
+            }
+
+            wb.close()
+
+            filled = [
+                name
+                for name, value in fields.items()
+                if value is not None and str(value).strip() != ""
+            ]
+
+            if filled:
+                log(f"{signal} / {route} : TOC DATA -> {', '.join(filled)}")
+                return True
+
+            log(
+                f"{signal} / {route} : NO POINTS / CRANK HANDLE / LC / TRACK "
+                f"IN TOC - ROUTE SKIPPED"
+            )
+            return False
+
+        wb.close()
+
+        log(f"{signal} / {route} : ROW NOT FOUND IN TOC - ROUTE SKIPPED")
+        return False
+
+    except Exception as e:
+        log(f"TOC CHECK ERROR : {signal} / {route} : {e}")
+        return True
+
+
 def test_route_engine():
     if TOC_FILE is None:
-        messagebox.showerror(
-            "Error",
-            "Please Load TOC First."
-        )
+        log("START FAILED : TOC NOT LOADED")
         return
-    if not os.path.exists(CONFIG_FILE):
-        messagebox.showerror(
-            "Error",
-            "Please Load Configuration First."
-        )
+    if not CONFIG_FILE or not os.path.exists(CONFIG_FILE):
+        log("START FAILED : CONFIGURATION NOT LOADED")
         return
     # ========================================
     # OPEN HITACHI TEST PANEL
@@ -6548,6 +6795,10 @@ def test_route_engine():
 
                 log("--------------------------------")
                 log(f"Operating Route : {route}")
+
+                # Nothing to test for this route in the TOC
+                if not route_has_test_data(signal, route):
+                    continue
 
                 # This route must be completely finalized before
                 # the automation moves to the next route.
@@ -6786,6 +7037,10 @@ def test_route_engine():
                 time.sleep(2)
 
             for calling_on_route in calling_on_routes:
+
+                # Nothing to test for this calling-on route in the TOC
+                if not route_has_test_data(signal, calling_on_route):
+                    continue
 
                 calling_signal = signal
 
@@ -7430,31 +7685,83 @@ def load_excel():
 
 
 def load_universal_coordinates():
-    """EDRC runner entry point: load HAH COORDINATES.xlsx automatically."""
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    config_path = os.path.join(base_dir, "HAH COORDINATES.xlsx")
+    """EDRC runner entry point: load the coordinate file.
 
-    # Keep compatibility with the existing application: the HAH file
-    # is the configuration file used by the route engine.
-    if not os.path.exists(config_path):
-        log(f"EDRC: coordinate file not found -> {config_path}")
+    The EDRC master passes the COORDS file the operator selected
+    (e.g. "E2E COORDINATES .xlsx") through EDRC_COORDS / EDRC_CONFIG.
+    Use that first; only fall back to a local HAH COORDINATES.xlsx
+    when the master supplied nothing.
+    """
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    candidates = [
+        os.environ.get("EDRC_COORDS"),
+        os.environ.get("EDRC_CONFIG"),
+        os.environ.get("EDRC_COORDINATES"),
+        os.environ.get("EDRC_UNIVERSAL_COORDINATES"),
+        os.path.join(base_dir, "HAH COORDINATES.xlsx"),
+        os.path.join(os.getcwd(), "HAH COORDINATES.xlsx")
+    ]
+
+    config_path = None
+
+    for item in candidates:
+
+        if not item:
+            continue
+
+        item = os.path.abspath(item)
+
+        if os.path.exists(item):
+            config_path = item
+            break
+
+    if config_path is None:
+        log(
+            "EDRC: coordinate file not found. Checked : "
+            + " | ".join(str(c) for c in candidates if c)
+        )
         return
 
-    log("EDRC: loading HAH COORDINATES.xlsx")
+    log(f"EDRC: loading COORDINATES -> {config_path}")
     load_config(config_path, show_message=False)
     log(f"EDRC: COORDINATES READY -> {CONFIG_FILE}")
 
 
 def start_automation():
-    """EDRC runner entry point: start the existing route engine."""
+    """EDRC runner entry point: start the existing route engine.
+
+    The engine runs in a BACKGROUND THREAD. Running it on the Tk main
+    thread froze the window, so the log (written through root.after)
+    only appeared at the very end and the launcher believed the
+    program had never started.
+    """
+
+    global running
+
     log("EDRC: START AUTOMATION")
-    try:
-        return test_route_engine()
-    except Exception as e:
-        log(f"EDRC: TEST ENGINE ERROR : {type(e).__name__} : {e}")
-        if os.environ.get("EDRC_UNATTENDED") == "1":
-            restore_edrc_window()
-        raise
+
+    def worker():
+        global running
+        try:
+            test_route_engine()
+        except Exception as e:
+            log(
+                f"EDRC: TEST ENGINE ERROR : "
+                f"{type(e).__name__} : {e}"
+            )
+        finally:
+            running = False
+
+    running = True
+
+    threading.Thread(
+        target=worker,
+        daemon=True
+    ).start()
+
+    return True
 
 
 # =========================================================
